@@ -101,18 +101,18 @@
 
 
 
-<meta name="description" content="简介psi-probe是为了取代和扩展Tomcat manager，使其更易于管理和监控的Apache Tomcat实例。不像许多其他的服务器监控工具，psi-probe不需要对现有应用进行任何更改。它通过Web界面提供其所有功能，只需将其部署到您的服务器上即可。 实现功能请求：即时在每个应用程序的基础上实时监控流量会话：浏览/搜索属性，查看最后一个IP，到期，估计大小JSP：浏览，查看源代码，编">
+<meta name="description" content="简介psi-probe是为了取代和扩展Tomcat manager，使其更易于管理和监控的Apache Tomcat实例。不像许多其他的服务器监控工具，psi-probe不需要对现有应用进行任何更改。它通过Web界面提供其所有功能，只需将其部署到您的服务器上即可。 实现功能请求： 即时在每个应用程序的基础上实时监控流量会话： 浏览/搜索属性，查看最后一个IP，到期，估计大小JSP： 浏览，查看源代">
 <meta name="keywords" content="Tomcat">
 <meta property="og:type" content="article">
 <meta property="og:title" content="probe安装配置">
 <meta property="og:url" content="http://lovese.cn/2016/11/05/probe安装配置/index.html">
 <meta property="og:site_name" content="Xiangzi&#39;s Blog">
-<meta property="og:description" content="简介psi-probe是为了取代和扩展Tomcat manager，使其更易于管理和监控的Apache Tomcat实例。不像许多其他的服务器监控工具，psi-probe不需要对现有应用进行任何更改。它通过Web界面提供其所有功能，只需将其部署到您的服务器上即可。 实现功能请求：即时在每个应用程序的基础上实时监控流量会话：浏览/搜索属性，查看最后一个IP，到期，估计大小JSP：浏览，查看源代码，编">
+<meta property="og:description" content="简介psi-probe是为了取代和扩展Tomcat manager，使其更易于管理和监控的Apache Tomcat实例。不像许多其他的服务器监控工具，psi-probe不需要对现有应用进行任何更改。它通过Web界面提供其所有功能，只需将其部署到您的服务器上即可。 实现功能请求： 即时在每个应用程序的基础上实时监控流量会话： 浏览/搜索属性，查看最后一个IP，到期，估计大小JSP： 浏览，查看源代">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-27T16:11:21.497Z">
+<meta property="og:updated_time" content="2017-08-31T15:15:24.047Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="probe安装配置">
-<meta name="twitter:description" content="简介psi-probe是为了取代和扩展Tomcat manager，使其更易于管理和监控的Apache Tomcat实例。不像许多其他的服务器监控工具，psi-probe不需要对现有应用进行任何更改。它通过Web界面提供其所有功能，只需将其部署到您的服务器上即可。 实现功能请求：即时在每个应用程序的基础上实时监控流量会话：浏览/搜索属性，查看最后一个IP，到期，估计大小JSP：浏览，查看源代码，编">
+<meta name="twitter:description" content="简介psi-probe是为了取代和扩展Tomcat manager，使其更易于管理和监控的Apache Tomcat实例。不像许多其他的服务器监控工具，psi-probe不需要对现有应用进行任何更改。它通过Web界面提供其所有功能，只需将其部署到您的服务器上即可。 实现功能请求： 即时在每个应用程序的基础上实时监控流量会话： 浏览/搜索属性，查看最后一个IP，到期，估计大小JSP： 浏览，查看源代">
 
 
 
@@ -441,10 +441,13 @@
 
       
         <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>psi-probe是为了取代和扩展Tomcat manager，使其更易于管理和监控的Apache Tomcat实例。不像许多其他的服务器监控工具，psi-probe不需要对现有应用进行任何更改。它通过Web界面提供其所有功能，只需将其部署到您的服务器上即可。</p>
-<h2 id="实现功能"><a href="#实现功能" class="headerlink" title="实现功能"></a>实现功能</h2><p><strong>请求：</strong>即时在每个应用程序的基础上实时监控流量<br><strong>会话：</strong>浏览/搜索属性，查看最后一个IP，到期，估计大小<br><strong>JSP：</strong>浏览，查看源代码，编译<br><strong>数据源：</strong>查看池使用情况，执行查询<br><strong>日志：</strong>查看内容，下载，在运行时更改级别<br><strong>线程：</strong>查看执行堆栈，kill线程<br><strong>连接器：</strong>状态，使用情况图表<br><strong>证书：</strong>系统信任存储和连接器密钥库/信任库<br><strong>集群：</strong>状态，使用情况图表<br><strong>JVM：</strong>内存使用情况图，建议GC<br><strong>Java服务包装器：</strong>重新启动JVM<br><strong>系统：</strong>CPU使用率，内存使用率，交换文件使用率</p>
+<h2 id="实现功能"><a href="#实现功能" class="headerlink" title="实现功能"></a>实现功能</h2><p><strong>请求：</strong> 即时在每个应用程序的基础上实时监控流量<br><strong>会话：</strong> 浏览/搜索属性，查看最后一个IP，到期，估计大小<br><strong>JSP：</strong> 浏览，查看源代码，编译<br><strong>数据源：</strong> 查看池使用情况，执行查询<br><strong>日志：</strong> 查看内容，下载，在运行时更改级别<br><strong>线程：</strong> 查看执行堆栈，kill线程<br><strong>连接器：</strong> 状态，使用情况图表<br><strong>证书：</strong> 系统信任存储和连接器密钥库/信任库<br><strong>集群：</strong> 状态，使用情况图表<br><strong>JVM：</strong> 内存使用情况图，建议GC<br><strong>Java服务包装器：</strong> 重新启动JVM<br><strong>系统：</strong> CPU使用率，内存使用率，交换文件使用率</p>
 <h2 id="下载安装配置"><a href="#下载安装配置" class="headerlink" title="下载安装配置"></a>下载安装配置</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"># wget https://github.com/psi-probe/psi-probe/releases/download/2.4.0.SP1/probe.war</div><div class="line"># cp -f probe.war $TOMCAT_HOME/webapps/</div><div class="line"># vim $TOMCAT_HOME/conf/tomcat-users.xml</div><div class="line"></div><div class="line">&lt;role rolename=&quot;probe&quot; /&gt;</div><div class="line"> 		&lt;role rolename=&quot;tomcat&quot; /&gt;</div><div class="line"> 		&lt;role rolename=&quot;administrator&quot; /&gt;</div><div class="line"> 		&lt;role rolename=&quot;manager-gui&quot; /&gt;</div><div class="line">&lt;user username=&quot;admin&quot; password=&quot;密码&quot; roles=&quot;manager-gui&quot; /&gt;</div></pre></td></tr></table></figure>
 <p>这将创建一个名为用户<code>admin</code>与角色<code>manager-gui</code>，改完后重启tomcat访问<a href="http://127.0.0.1:8080/probe" target="_blank" rel="external">http://127.0.0.1:8080/probe</a> 是否安装成功</p>
-<p><strong>Tips:</strong>在Tomcat的5.x和6.0.29及以下，你应该使用<code>manager</code>代替<code>manager-gui</code>。</p>
+<p><strong>Tips:</strong> 在Tomcat的5.x和6.0.29及以下，你应该使用<code>manager</code>代替<code>manager-gui</code>。</p>
+<blockquote>
+<p>源自官方说明文档</p>
+</blockquote>
 <hr>
 
       

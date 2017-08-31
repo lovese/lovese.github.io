@@ -109,7 +109,7 @@
 <meta property="og:site_name" content="Xiangzi&#39;s Blog">
 <meta property="og:description" content="第三章 使用MySQL12345# msql -u username -p -h myserver -P port  #连接数据库&amp;gt; USE database_name                        #打开数据库&amp;gt; SHOW DATABASES                           #显示可用数据库列表&amp;gt; SHOW TABLES">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-31T14:15:11.705Z">
+<meta property="og:updated_time" content="2017-08-31T15:16:21.833Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL学习笔记">
 <meta name="twitter:description" content="第三章 使用MySQL12345# msql -u username -p -h myserver -P port  #连接数据库&amp;gt; USE database_name                        #打开数据库&amp;gt; SHOW DATABASES                           #显示可用数据库列表&amp;gt; SHOW TABLES">
@@ -488,6 +488,10 @@
 </ul>
 <h2 id="第十一章-使用数据处理函数"><a href="#第十一章-使用数据处理函数" class="headerlink" title="第十一章 使用数据处理函数"></a>第十一章 使用数据处理函数</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">&gt; SELECT vend_name,Upper(vend_name) AS vend_name_upcase FROM vendors ORDER BY vend_name;</div><div class="line">+----------------+------------------+</div><div class="line">| vend_name      | vend_name_upcase |</div><div class="line">+----------------+------------------+</div><div class="line">| ACME           | ACME             |</div><div class="line">| Anvils R Us    | ANVILS R US      |</div><div class="line">| Furball Inc.   | FURBALL INC.     |</div><div class="line">| Jet Set        | JET SET          |</div><div class="line">| Jouets Et Ours | JOUETS ET OURS   |</div><div class="line">| LT Supplies    | LT SUPPLIES      |</div><div class="line">+----------------+------------------+</div><div class="line">#文本处理函数</div><div class="line">&gt; SELECT cust_id,order_num FROM orders WHERE Date(order_date)=&apos;2005-09-01&apos;;</div><div class="line">#日期和事件处理函数,检索order_date为2005-09-01的订单记录</div><div class="line">&gt; SELECT cust_id,order_num FROM orders WHERE Date(order_date) BETWEEN &apos;2005-09-01&apos; AND &apos;2005-09-30&apos;;</div><div class="line">#日期和事件处理函数,检索2005年9月的所有订单</div><div class="line">&gt; SELECT cust_id,order_num FROM orders WHERE Year(order_date)=2005 AND Month(order_date)=9;</div><div class="line">#日期和事件处理函数,检索2005年9月的所有订单</div></pre></td></tr></table></figure>
 <p><strong>Tips：</strong> 三种数据处理函数：文本处理、日期和时间处理、数值处理</p>
+<blockquote>
+<p>原始链接：<a href="http://www.wuxubj.cn/2016/07/mysql-learning-notes/" target="_blank" rel="external">http://www.wuxubj.cn/2016/07/mysql-learning-notes/</a></p>
+</blockquote>
+<hr>
 
       
     </div>
