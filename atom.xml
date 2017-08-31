@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Xiangzi&#39;s Blog</title>
+  <subtitle>好记性不如烂笔头</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://lovese.cn/"/>
+  <updated>2017-08-27T16:11:31.734Z</updated>
+  <id>http://lovese.cn/</id>
+  
+  <author>
+    <name>Xiangzi</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ChromeBook安装Google Play</title>
+    <link href="http://lovese.cn/2017/08/25/ChromeBook%E5%AE%89%E8%A3%85Google%20Play/"/>
+    <id>http://lovese.cn/2017/08/25/ChromeBook安装Google Play/</id>
+    <published>2017-08-25T03:24:19.000Z</published>
+    <updated>2017-08-27T16:11:31.734Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="步骤如下："><a href="#步骤如下：" class="headerlink" title="步骤如下："></a>步骤如下：</h2><p>1、首先查看你的Chromebook是否支持Google Play（64位x86CPU支持的更好，ARM64位CPU好像也可以），Google下或者问度娘</p>
+<p>2、进开发者模式（稳定版、测试版、开发版都行），具体操作如下：<br>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">按住 Esc+F3 (Refresh)，然后按 Power，接着就会进入恢复模式。</div><div class="line">接着，按 Ctrl+D，它会提示您确认进入开发者模式，您的数据会被清除。</div><div class="line">再次按 Ctrl+D，或者等待 30 秒左右，系统会引导您进入开发者模式。</div></pre></td></tr></table></figure></p>
+<p>3、进入设置，查看帮助，关于Chrome系统，确认ChromeOS版本</p>
+<p>4、进系统后，按Ctrl+Alt+t，打开命令行<br>   a.如果是ChromeOS 57及以前的版本，输入以下命令:<br>      <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">shell</div><div class="line">sudo su</div><div class="line">cp /etc/chrome_dev.conf /usr/local/</div><div class="line">mount --bind /usr/local/chrome_dev.conf /etc/chrome_dev.conf</div><div class="line">echo &quot;--enable-arc&quot; &gt;&gt; /etc/chrome_dev.conf</div><div class="line">退出账户重新登陆即可</div></pre></td></tr></table></figure></p>
+<p>  b.如果是ChromeOS 58及以后的版本，输入以下命令:<br>      <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">shell</div><div class="line">sudo su</div><div class="line">cp /etc/chrome_dev.conf /usr/local/</div><div class="line">mount --bind /usr/local/chrome_dev.conf /etc/chrome_dev.conf</div><div class="line">echo &quot;--arc-availability=officially-supported &quot; &gt;&gt; /etc/chrome_dev.conf</div><div class="line">restart ui</div><div class="line">exit</div><div class="line">完了重新登陆即可</div></pre></td></tr></table></figure></p>
+<p>5、每次开机都得输入以上命令，可以写脚本开机自动执行实现（本人未实践）</p>
+<p>以上都是通过Google搜索整理来的（本人实践可用），最后不尽完善之处尽情谅解</p>
+<hr>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;步骤如下：&quot;&gt;&lt;a href=&quot;#步骤如下：&quot; class=&quot;headerlink&quot; title=&quot;步骤如下：&quot;&gt;&lt;/a&gt;步骤如下：&lt;/h2&gt;&lt;p&gt;1、首先查看你的Chromebook是否支持Google Play（64位x86CPU支持的更好，ARM64位CPU
+    
+    </summary>
+    
+      <category term="chromebook" scheme="http://lovese.cn/categories/chromebook/"/>
+    
+    
+      <category term="google play" scheme="http://lovese.cn/tags/google-play/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>probe安装配置</title>
+    <link href="http://lovese.cn/2016/11/05/probe%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/"/>
+    <id>http://lovese.cn/2016/11/05/probe安装配置/</id>
+    <published>2016-11-05T03:24:19.000Z</published>
+    <updated>2017-08-27T16:11:21.497Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>psi-probe是为了取代和扩展Tomcat manager，使其更易于管理和监控的Apache Tomcat实例。不像许多其他的服务器监控工具，psi-probe不需要对现有应用进行任何更改。它通过Web界面提供其所有功能，只需将其部署到您的服务器上即可。</p>
+<h2 id="实现功能"><a href="#实现功能" class="headerlink" title="实现功能"></a>实现功能</h2><p><strong>请求：</strong>即时在每个应用程序的基础上实时监控流量<br><strong>会话：</strong>浏览/搜索属性，查看最后一个IP，到期，估计大小<br><strong>JSP：</strong>浏览，查看源代码，编译<br><strong>数据源：</strong>查看池使用情况，执行查询<br><strong>日志：</strong>查看内容，下载，在运行时更改级别<br><strong>线程：</strong>查看执行堆栈，kill线程<br><strong>连接器：</strong>状态，使用情况图表<br><strong>证书：</strong>系统信任存储和连接器密钥库/信任库<br><strong>集群：</strong>状态，使用情况图表<br><strong>JVM：</strong>内存使用情况图，建议GC<br><strong>Java服务包装器：</strong>重新启动JVM<br><strong>系统：</strong>CPU使用率，内存使用率，交换文件使用率</p>
+<h2 id="下载安装配置"><a href="#下载安装配置" class="headerlink" title="下载安装配置"></a>下载安装配置</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"># wget https://github.com/psi-probe/psi-probe/releases/download/2.4.0.SP1/probe.war</div><div class="line"># cp -f probe.war $TOMCAT_HOME/webapps/</div><div class="line"># vim $TOMCAT_HOME/conf/tomcat-users.xml</div><div class="line"></div><div class="line">&lt;role rolename=&quot;probe&quot; /&gt;</div><div class="line"> 		&lt;role rolename=&quot;tomcat&quot; /&gt;</div><div class="line"> 		&lt;role rolename=&quot;administrator&quot; /&gt;</div><div class="line"> 		&lt;role rolename=&quot;manager-gui&quot; /&gt;</div><div class="line">&lt;user username=&quot;admin&quot; password=&quot;密码&quot; roles=&quot;manager-gui&quot; /&gt;</div></pre></td></tr></table></figure>
+<p>这将创建一个名为用户<code>admin</code>与角色<code>manager-gui</code>，改完后重启tomcat访问<a href="http://127.0.0.1:8080/probe" target="_blank" rel="external">http://127.0.0.1:8080/probe</a> 是否安装成功</p>
+<p><strong>Tips:</strong>在Tomcat的5.x和6.0.29及以下，你应该使用<code>manager</code>代替<code>manager-gui</code>。</p>
+<hr>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h2&gt;&lt;p&gt;psi-probe是为了取代和扩展Tomcat manager，使其更易于管理和监控的Apache Tomcat实例。不像许多其他的服务器监
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://lovese.cn/categories/Linux/"/>
+    
+    
+      <category term="Tomcat" scheme="http://lovese.cn/tags/Tomcat/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MySQL学习笔记</title>
+    <link href="http://lovese.cn/2016/11/05/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>http://lovese.cn/2016/11/05/MySQL学习笔记/</id>
+    <published>2016-11-05T03:24:19.000Z</published>
+    <updated>2017-08-31T14:15:11.705Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="第三章-使用MySQL"><a href="#第三章-使用MySQL" class="headerlink" title="第三章 使用MySQL"></a>第三章 使用MySQL</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"># msql -u username -p -h myserver -P port  #连接数据库</div><div class="line">&gt; USE database_name                        #打开数据库</div><div class="line">&gt; SHOW DATABASES                           #显示可用数据库列表</div><div class="line">&gt; SHOW TABLES                              #返回数据库中数据表的列表</div><div class="line">&gt; SHOW COLUMNS FROM table_name             #显示表中字段信息</div></pre></td></tr></table></figure>
+<h2 id="第四章-检索数据"><a href="#第四章-检索数据" class="headerlink" title="第四章 检索数据"></a>第四章 检索数据</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&gt; SELECT field_name FROM table_name;                       #从表中检索选定的列</div><div class="line">&gt; SELECT field_name1,field_name2 FROM table_name;          #从表中检索多列</div><div class="line">&gt; SELECT * FROM table_name;                                #检索表中所有列</div><div class="line">&gt; SELECT DISTINCT field_name FROM table_name;              #消除重复行</div><div class="line">&gt; SELECT field_name FROM table_name LIMIT lines;           #返回检索结果的前几行</div><div class="line">&gt; SELECT field_name FROM table_name LIMIT strat_pos,lines; #从第strat_pos行开始的行</div><div class="line">&gt; SELECT products.prod_name FROM crashcourse.products;     #使用完全限定的表名</div></pre></td></tr></table></figure>
+<h2 id="第五章-排序检索数据"><a href="#第五章-排序检索数据" class="headerlink" title="第五章 排序检索数据"></a>第五章 排序检索数据</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&gt; SELECT prod_name FROM products ORDER BY prod_id;</div><div class="line">#对prod_name列，以prod_id的字母顺序排列数据</div><div class="line">&gt; SELECT prod_id,prod_price,prod_name FROM products ORDER BY prod_prices,prod_name;</div><div class="line">#通过多列数据对结果排序（首先依据prod_prices排序，prod_prices相同时，再依据prod_name排序）</div><div class="line">&gt; SELECT prod_id,prod_price,prod_name FROM products ORDER BY prod_prices DESC,prod_name;</div><div class="line">#以prod_prices降序，prod_name升序排列数据，mysql默认升序排列，如果想同时以prod_name降序排列，需要在prod_name后也加上DESC,因为DESC关键字只应用到直接位于其前面的列名上。</div><div class="line">&gt; SELECT prod_price FROM products ORDER BY prod_prices DESC LIMIT 1；</div><div class="line">#找出一个列中最高的值</div></pre></td></tr></table></figure>
+<p><strong>Tips：</strong></p>
+<ul>
+<li>mysql默认升序排列数据</li>
+<li>DESC关键字只应用到直接位于其前面的列名上，根据多列降序，则每列都要加上DESC关键字</li>
+<li>ORDER BY子句必须是SELECT语句中的最后一条子句（一个子句通常由一个<strong>关键字</strong>和所提供的<strong>数据</strong>组成，FROM products是子句，ORDER BY prod_prices也是子句，但DESC和LIMIT 1不是子句）。</li>
+</ul>
+<h2 id="第六章-过滤数据"><a href="#第六章-过滤数据" class="headerlink" title="第六章 过滤数据"></a>第六章 过滤数据</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&gt; SELECT prod_name,prod_price FROM products WHERE prod_name=&apos;fuses&apos;;</div><div class="line">#返回prod_name的值为Fuses的一行。</div><div class="line">&gt; SELECT prod_name,prod_price FROM products WHERE prod_price&lt;=10;</div><div class="line">#列出价格小于或等于10美元的所有产品</div><div class="line">&gt; SELECT prod_name,prod_price FROM products WHERE prod_price BETWEEN 5 AND 10;</div><div class="line">#检索价格在5美元和10美元之间的所有产品(包括5和10)</div><div class="line">&gt; SELECT cust_id FROM customers WHERE cust_email IS NULL;</div><div class="line">#返回没有email的顾客id</div></pre></td></tr></table></figure>
+<p><strong>Tips：</strong></p>
+<ul>
+<li>mysql的where子句支持的操作符有=，!=,&lt;,&lt;=,&gt;,&gt;=,BETWEEN</li>
+<li>未知具有特殊的含义，数据库不知道它们是否匹配，所以在匹配过滤或不匹配过滤时都不返回它们。</li>
+</ul>
+<h2 id="第七章-数据过滤"><a href="#第七章-数据过滤" class="headerlink" title="第七章 数据过滤"></a>第七章 数据过滤</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&gt; SELECT prod_id,prod_price,prod_name FROM products WHERE vend_id=1003 AND prod_price &lt;=10;</div><div class="line">#检索由供应商1003制造且价格小于等于10美元的所有产品</div><div class="line">&gt; SELECT prod_name,prod_price FROM products WHERE vend_id=1002 OR vend_id=1003;</div><div class="line">#检索供应商1002和1003制造的所有产品</div><div class="line">&gt; SELECT prod_name,prod_price FROM products WHERE (vend_id=1002 OR vend_id=1003) AND prod_price&gt;=10;</div><div class="line">#检索价格为10美元（含）以上且由1002或1003制造的所有产品SQL在处理OR操作符前，优先处理AND操作符，所以上面的括号不能少，否则将得不到想要的结果</div><div class="line">&gt; SELECT prod_name,prod_price,vend_id FROM products WHERE vend_id IN(1002,1003) ORDER BY prod_name;</div><div class="line">#检索供应商1002和1003制造的所有产品</div><div class="line">&gt; SELECT prod_name,prod_price FROM products WHERE vend_id NOT IN(1002,1003) ORDER BY prod_name;</div><div class="line">#检索1002和1003之外供应商制造的所有产品</div></pre></td></tr></table></figure>
+<p><strong>Tips：</strong></p>
+<ul>
+<li>SQL在处理OR操作符前，优先处理AND操作符，使用()控制优先级</li>
+<li>IN操作符完成与OR相同的功能，但IN操作执行更快，而且IN中还可以包含其他SELECT语句，使得能够更动态地建立WHERE子句</li>
+<li>WHERE子句中的NOT操作符有且只有一个功能，那就是否定它之后所跟的任何条件</li>
+<li>MySQL仅支持使用NOT对IN、BETWEEN和EXISTS子句取反。</li>
+</ul>
+<h2 id="第八章-用通配符进行过滤"><a href="#第八章-用通配符进行过滤" class="headerlink" title="第八章 用通配符进行过滤"></a>第八章 用通配符进行过滤</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt; SELECT prod_id,prod_name FROM products WHERE prod_name LIKE &apos;%anvil%&apos;;</div><div class="line">#匹配任何包含文本anvil的值</div><div class="line">&gt; SELECT prod_id,prod_name FROM products WHERE prod_name LIKE &apos;_ ton anvil&apos;;</div><div class="line">#_只能匹配一个字符</div></pre></td></tr></table></figure>
+<p><strong>Tips：</strong></p>
+<ul>
+<li>为在搜索子句中使用通配符，必须使用LIKE操作符；</li>
+<li>通配符<code>%</code>可以匹配0个、1个或多个字符，但不能匹配NULL；</li>
+<li>通配符<code>_</code>总是匹配一个字符，不能多也不能少；</li>
+<li>不要过度使用通配符，通配符搜索的处理一般要比前面讨论的其他搜索所花时间更长；</li>
+<li>把通配符置于搜索模式的开始处，搜索起来是最慢的。</li>
+</ul>
+<h2 id="第九章-用正则表达式进行搜索"><a href="#第九章-用正则表达式进行搜索" class="headerlink" title="第九章 用正则表达式进行搜索"></a>第九章 用正则表达式进行搜索</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">&gt; SELECT prod_name FROM products WHERE prod_name LIKE &apos;1000&apos; ORDER BY prod_name;</div><div class="line">#匹配完整串1000</div><div class="line">&gt; SELECT prod_name FROM products WHERE prod_name REGEXP &apos;1000&apos; ORDER BY prod_name;</div><div class="line">#匹配子串1000</div><div class="line">&gt; SELECT prod_name FROM products WHERE prod_name REGEXP &apos;.000&apos; ORDER BY prod_name;</div><div class="line">#点.匹配任意一个字符</div><div class="line">&gt; SELECT prod_name FROM products WHERE prod_name REGEXP &apos;1000|2000&apos; ORDER BY prod_name;</div><div class="line">#竖线|为正则表达式的OR操作符,它表示匹配其中之一，因此1000和2000都匹配并返回</div><div class="line">&gt; SELECT prod_name FROM products WHERE prod_name REGEXP &apos;[123] Ton&apos;;</div><div class="line">#匹配几个字符之一</div><div class="line">&gt; SELECT prod_name FROM products WHERE prod_name REGEXP &apos;[^123] Ton&apos;;</div><div class="line">#匹配123以外的几个字符之一</div><div class="line">&gt; SELECT prod_name FROM products WHERE prod_name REGEXP &apos;[1-5] Ton&apos;;</div><div class="line">#匹配范围，常见范围：[1-9],[a-z]，[a-zA-Z0-9]</div><div class="line">&gt; SELECT prod_name FROM products WHERE prod_name REGEXP &apos;\\([0-9] sticks?\\)&apos;;</div><div class="line">#双斜杠\\为转义字符，sticks?匹配stick和sticks</div><div class="line">&gt; SELECT prod_name FROM products WHERE prod_name REGEXP &apos;[[:digit:]]&#123;4&#125;&apos;;</div><div class="line">#匹配连在一起的任意4位数字[:digit:]代表数字集合，&#123;4&#125;要求它前面的字符出现4次</div><div class="line">&gt; SELECT prod_name FROM products WHERE prod_name REGEXP &apos;^[0-9\\.]&apos;;</div><div class="line">#找出以数字或小数点开始的所有prod_name</div></pre></td></tr></table></figure>
+<p><strong>Tips：</strong></p>
+<ul>
+<li>LIKE和REGEXP的不同在于，LIKE匹配整个串而REGEXP匹配子串；</li>
+<li>MySQL中的正则表达式匹配（自版本3.23.4后）不区分大小写（即，大写和小写都匹配）。为区分大小写，可使用BINARY关键字，如<code>WHERE prod_name REGEXP BINARY &#39;JetPack .000&#39;</code>；</li>
+<li><code>^</code>有两种用法。在集合中（用[和]定义），用它来否定该集合，否则，用来指串的开始处。</li>
+</ul>
+<h2 id="第十章-创建计算字段"><a href="#第十章-创建计算字段" class="headerlink" title="第十章 创建计算字段"></a>第十章 创建计算字段</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">&gt; SELECT Concat(RTrim(vend_name),&apos;(&apos;,RTrim(vend_country),&apos;)&apos;) AS vend_title From vendors ORDER BY vend_name;</div><div class="line">+------------------------+</div><div class="line">| vend_title             |</div><div class="line">+------------------------+</div><div class="line">| ACME(USA)              |</div><div class="line">| Anvils R Us(USA)       |</div><div class="line">| Furball Inc.(USA)      |</div><div class="line">| Jet Set(England)       |</div><div class="line">| Jouets Et Ours(France) |</div><div class="line">| LT Supplies(USA)       |</div><div class="line">+------------------------+</div><div class="line">#拼接字段并使用别名</div><div class="line">&gt; SELECT prod_id,quantity,item_price,quantity*item_price AS expanded_price FROM orderitems Where order_num = 20005;</div><div class="line">+--------+----------+------------+----------------+</div><div class="line">| prod_id| quantity | item_price | expanded_price |</div><div class="line">+--------+----------+------------+----------------+</div><div class="line">| ANV01  |       10 |       5.99 |          59.90 |</div><div class="line">| ANV02  |        3 |       9.99 |          29.97 |</div><div class="line">| TNT2   |        5 |      10.00 |          50.00 |</div><div class="line">| FB     |        1 |      10.00 |          10.00 |</div><div class="line">+--------+----------+------------+----------------+</div><div class="line">#执行计算字段</div></pre></td></tr></table></figure>
+<p><strong>Tips：</strong></p>
+<ul>
+<li>Concat()函数用于拼接多个字段；</li>
+<li>RTrim()函数去掉串右边的空格，LTrim()函数去掉串左边的空格，Trim()函数去掉串左右两边的空格；</li>
+<li>AS(alias)关键字，为字段赋予别名。</li>
+</ul>
+<h2 id="第十一章-使用数据处理函数"><a href="#第十一章-使用数据处理函数" class="headerlink" title="第十一章 使用数据处理函数"></a>第十一章 使用数据处理函数</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">&gt; SELECT vend_name,Upper(vend_name) AS vend_name_upcase FROM vendors ORDER BY vend_name;</div><div class="line">+----------------+------------------+</div><div class="line">| vend_name      | vend_name_upcase |</div><div class="line">+----------------+------------------+</div><div class="line">| ACME           | ACME             |</div><div class="line">| Anvils R Us    | ANVILS R US      |</div><div class="line">| Furball Inc.   | FURBALL INC.     |</div><div class="line">| Jet Set        | JET SET          |</div><div class="line">| Jouets Et Ours | JOUETS ET OURS   |</div><div class="line">| LT Supplies    | LT SUPPLIES      |</div><div class="line">+----------------+------------------+</div><div class="line">#文本处理函数</div><div class="line">&gt; SELECT cust_id,order_num FROM orders WHERE Date(order_date)=&apos;2005-09-01&apos;;</div><div class="line">#日期和事件处理函数,检索order_date为2005-09-01的订单记录</div><div class="line">&gt; SELECT cust_id,order_num FROM orders WHERE Date(order_date) BETWEEN &apos;2005-09-01&apos; AND &apos;2005-09-30&apos;;</div><div class="line">#日期和事件处理函数,检索2005年9月的所有订单</div><div class="line">&gt; SELECT cust_id,order_num FROM orders WHERE Year(order_date)=2005 AND Month(order_date)=9;</div><div class="line">#日期和事件处理函数,检索2005年9月的所有订单</div></pre></td></tr></table></figure>
+<p><strong>Tips：</strong> 三种数据处理函数：文本处理、日期和时间处理、数值处理</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;第三章-使用MySQL&quot;&gt;&lt;a href=&quot;#第三章-使用MySQL&quot; class=&quot;headerlink&quot; title=&quot;第三章 使用MySQL&quot;&gt;&lt;/a&gt;第三章 使用MySQL&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;tabl
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://lovese.cn/categories/Linux/"/>
+    
+    
+      <category term="MySQL" scheme="http://lovese.cn/tags/MySQL/"/>
+    
+  </entry>
+  
+</feed>
